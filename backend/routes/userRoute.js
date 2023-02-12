@@ -1,0 +1,55 @@
+import express from "express";
+import bcrypt from "bcryptjs";
+import expressAsyncHandler from "express-async-handler";
+import User from "../models/userModel.js";
+import { generateToken } from "../utils.js";
+
+const userRouter = express.Router();
+
+userRouter.get(
+  "/users",
+  expressAsyncHandler(async (req, res) => {
+    const allusers = await User.find();
+    res.send({allusers});
+  })
+);
+
+userRouter.post(
+  "/login",
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findOne({ email: req.body.email });
+    if (user) {
+      if (req.body.password === user.password) {
+        res.send({
+          email: user.email,
+          isAdmin: user.isAdmin,
+          token: generateToken(user),
+        });
+        return;
+      }
+    }
+    res.status(401).send({ message: "Invalid email or password" });
+  })
+);
+
+userRouter.post(
+  "/signup",
+  expressAsyncHandler(async (req, res) => {
+    const newUser = new User({
+      email: req.body.email,
+      password: req.body.password,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      isAdmin: req.body.isAdmin,
+    });
+    const user = await newUser.save();
+    res.send({
+      email: user.email,
+      firstname: user.firstname,
+      lastname: user.lastname,
+      isAdmin: user.isAdmin,
+    });
+  })
+);
+
+export default userRouter;

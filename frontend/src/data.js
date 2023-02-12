@@ -1,0 +1,70 @@
+const data = {
+  products: [
+    {
+      name: "Buckwheat Molasses",
+      slug: "buckwheat-molasses",
+      image: "/images/p1.jpg",
+      price: 7.99,
+      weight: "17.04 oz",
+      description: " | Good Buckwheat Molasses",
+    },
+    {
+      name: "Clossy Slice",
+      slug: "clossy-slice",
+      image: "/images/p2.jpg",
+      price: 8,
+      weight: "18 oz",
+      description: " | Good Clossy Slice",
+    },
+    {
+      name: "Wild Buns",
+      slug: "wild-buns",
+      image: "/images/p3.jpg",
+      price: 10,
+      weight: "20 oz",
+      description: " | Good Wild Buns",
+    },
+    {
+      name: "Hemp Hemp Hooray",
+      slug: "hemp-hemp-horray",
+      image: "/images/p4.jpg",
+      price: 10,
+      weight: "20 oz",
+      description: " | Good Hemp Hemp Hooray",
+    },
+    {
+      name: "Hemp Hemp Closy",
+      slug: "hemp-hemp-closy",
+      image: "/images/p5.jpg",
+      price: 10,
+      weight: "20 oz",
+      description: " | Good Hemp Hemp closy",
+    },
+    {
+      name: "Hemp Hemp Butter",
+      slug: "hemp-hemp-butter",
+      image: "/images/p5.jpg",
+      price: 10,
+      weight: "20 oz",
+      description: " | Good Hemp Hemp closy",
+    },
+    {
+      name: "Hemp Hemp Cheez",
+      slug: "hemp-hemp-cheez",
+      image: "/images/p5.jpg",
+      price: 10,
+      weight: "20 oz",
+      description: " | Good Hemp Hemp closy",
+    },
+    {
+      name: "Hemp Hemp hochpoch",
+      slug: "hemp-hemp-hochpoch",
+      image: "/images/p5.jpg",
+      price: 10,
+      weight: "20 oz",
+      description: " | Good Hemp Hemp closy",
+    },
+  ],
+};
+
+export default data;
